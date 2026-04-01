@@ -1,22 +1,23 @@
-import About from "./componets/About";
-import Contact from "./componets/Contact";
-import Footer from "./componets/Footer";
-import Header from "./componets/Header";
-import Projects from "./componets/Projects";
-import Testimonials from "./componets/Testimonials";
+import { BrowserRouter,  Routes, Route} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
+import Home from "./componets/Home";
+import SignUp from "./componets/SignUp";
+import Login from "./componets/Login";
 
 const App = () => {
   return (
-    <div className="w-full overflow-hidden">
+    <>
+    <BrowserRouter>
+
       <ToastContainer/>
-      <Header/>
-      <About/>
-      <Projects/>
-      <Testimonials/>
-      <Contact/>
-      <Footer/>
-    </div>
+      <Routes>
+        <Route path="/" element={<SignUp/>} />
+        <Route path="/home" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+      </Routes>
+
+    </BrowserRouter>
+    </>
   )
 }
 
